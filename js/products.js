@@ -66,11 +66,19 @@ function displayProducts(products) {
 }
 
 
+window.onload = () => {
+    let status = 'init'
+    let productEl = document.getElementById('all-products');
 
-loadProducts();
-
-// Simulate heavy operation. It could be a complex price calculation.
-for (let i = 0; i < 10000000; i++) {
-    const temp = Math.sqrt(i) * Math.sqrt(i);
+    window.onscroll = () => {
+        let position = productEl.getBoundingClientRect().top - (window.scrollY + window.innerHeight)
+        if (status === 'init' && position <= 0) {
+            status = 'done'
+            loadProducts();
+            // Simulate heavy operation. It could be a complex price calculation.
+            for (let i = 0; i < 10000000; i++) {
+                const temp = Math.sqrt(i) * Math.sqrt(i);
+            }
+        }
+    }    
 }
-
