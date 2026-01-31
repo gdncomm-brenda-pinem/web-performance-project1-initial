@@ -97,15 +97,16 @@ section.hero {
     overflow: hidden;
 }
 
+section.hero picture {
+    display: block;
+    width: 100%;
+}
+
 section.hero img {
+    display: block;
     width: 100%;
     height: auto;
     filter: brightness(50%);
-    display: none;
-}
-
-section.hero img.desktop {
-    display: initial;
 }
 
 .hero-content {
@@ -477,13 +478,6 @@ footer .copyright-text {
         display: inline-block;
     }
 
-    section.hero img.desktop {
-        display: none;
-    }
-
-    section.hero img.tablet {
-        display: initial;
-    }
 
     .hero-content h1 {
         font-size: 40px;
@@ -616,13 +610,6 @@ footer .copyright-text {
         height: 7px;
     }
 
-    section.hero img.tablet {
-        display: none;
-    }
-
-    section.hero img.mobile {
-        display: initial;
-    }
 
     .hero-content {
         position: static;
